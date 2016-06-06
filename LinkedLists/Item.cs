@@ -29,11 +29,14 @@ namespace LinkedLists
         }
 
         //delete link with previous item
-        public void UnLinkPrev()
+        public void UnlinkPrev()
         {
-            Item it=this.PreviousItem;
-            this.PreviousItem = null;
-            it.NextItem = null;
+            if (this.PreviousItem != null)
+            {
+                Item it = this.PreviousItem;
+                this.PreviousItem = null;
+                it.NextItem = null;
+            }
         }
     }
 }

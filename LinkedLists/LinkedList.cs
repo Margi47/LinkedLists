@@ -88,21 +88,21 @@ namespace LinkedLists
             if (item == LastItem)
             {
                 Item it = item.PreviousItem;
-                item.UnLinkPrev();
+                item.UnlinkPrev();
                 LastItem = it;
             }
             else if (item == FirstItem)
             {
                 Item it = item.NextItem;
-                it.UnLinkPrev();
+                it.UnlinkPrev();
                 FirstItem = it;
             }
             else
             {
                 Item NIt = item.NextItem;
                 Item PIt = item.PreviousItem;   
-                item.NextItem.UnLinkPrev();
-                item.UnLinkPrev();
+                item.NextItem.UnlinkPrev();
+                item.UnlinkPrev();
                 NIt.Link(PIt);
             }
         }

@@ -27,7 +27,10 @@ namespace LinkedLists
 
         public void UnLink()
         {
-            LinkedItem = null;
+            if (LinkedItem != null)
+            {
+                LinkedItem = null;
+            }
         }
     }
 }
