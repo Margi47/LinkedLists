@@ -15,11 +15,11 @@ namespace LinkedListsTests
         {
             var myQueue = new Queue();
 
-            myQueue.enqueue(5);
+            myQueue.Enqueue(5);
 
             Assert.True(myQueue.FirstItem.Value == 5);
             Assert.True(myQueue.LastItem.Value == 5);
-            Assert.True(myQueue.contains(5));
+            Assert.True(myQueue.Contains(5));
         }
 
         [Fact]
@@ -28,17 +28,17 @@ namespace LinkedListsTests
 
             Queue myQueue = new Queue();
 
-            myQueue.enqueue(5);
-            myQueue.enqueue(3);
-            myQueue.enqueue(8);
+            myQueue.Enqueue(5);
+            myQueue.Enqueue(3);
+            myQueue.Enqueue(8);
 
             Assert.True(myQueue.FirstItem.Value == 5);
             Assert.True(myQueue.LastItem.Value == 8);
             Assert.True(myQueue.FirstItem.LinkedItem.Value == 3);
             Assert.True(myQueue.FirstItem.LinkedItem.LinkedItem.Value == 8);
-            Assert.True(myQueue.contains(5));
-            Assert.True(myQueue.contains(3));
-            Assert.True(myQueue.contains(8));
+            Assert.True(myQueue.Contains(5));
+            Assert.True(myQueue.Contains(3));
+            Assert.True(myQueue.Contains(8));
         }
 
         [Fact]
@@ -47,11 +47,11 @@ namespace LinkedListsTests
 
             Queue myQueue = new Queue();
 
-            myQueue.enqueue(5);
-            myQueue.enqueue(3);
-            myQueue.enqueue(8);
+            myQueue.Enqueue(5);
+            myQueue.Enqueue(3);
+            myQueue.Enqueue(8);
             int value;
-            myQueue.dequeue(out value);
+            myQueue.Dequeue(out value);
 
             Assert.True(myQueue.FirstItem.Value == 3);
             Assert.True(myQueue.LastItem.Value == 8);
@@ -65,10 +65,10 @@ namespace LinkedListsTests
 
             Queue myQueue = new Queue();
 
-            myQueue.enqueue(5);
+            myQueue.Enqueue(5);
 
             int value;
-            myQueue.dequeue(out value);
+            myQueue.Dequeue(out value);
 
             Assert.True(myQueue.FirstItem == null);
             Assert.True(myQueue.LastItem == null);

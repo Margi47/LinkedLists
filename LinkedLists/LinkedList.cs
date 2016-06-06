@@ -11,7 +11,7 @@ namespace LinkedLists
         internal Item LastItem;
         internal Item FirstItem;
 
-        public void insert(Item itemToInsert)
+        public void Insert(Item itemToInsert)
         {
             if (itemToInsert == null)
             {
@@ -23,15 +23,14 @@ namespace LinkedLists
                 LastItem = itemToInsert;
                 FirstItem = itemToInsert;
             }
-
             else
             {
-                itemToInsert.link(LastItem);
+                itemToInsert.Link(LastItem);
                 LastItem = itemToInsert;
             }
         }
 
-        public void insertAfter(Item item, Item itemToInsert)
+        public void InsertAfter(Item item, Item itemToInsert)
         {
             if (item == null)
             {
@@ -45,18 +44,17 @@ namespace LinkedLists
 
             if (item == LastItem)
             {
-                itemToInsert.link(item);
+                itemToInsert.Link(item);
                 LastItem = itemToInsert;
             }
-
             else
             {
-                item.NextItem.link(itemToInsert);
-                itemToInsert.link(item);
+                item.NextItem.Link(itemToInsert);
+                itemToInsert.Link(item);
             }
         }
 
-        public void insertBefore(Item item, Item itemToInsert)
+        public void InsertBefore(Item item, Item itemToInsert)
         {
             if (item == null)
             {
@@ -70,18 +68,17 @@ namespace LinkedLists
 
             if (item == FirstItem)
             {
-                item.link(itemToInsert);
+                item.Link(itemToInsert);
                 FirstItem = itemToInsert;
             }
-
             else
             {
-                itemToInsert.link(item.PreviousItem);
-                item.link(itemToInsert);
+                itemToInsert.Link(item.PreviousItem);
+                item.Link(itemToInsert);
             }
         }
 
-        public void remove(Item item)
+        public void Remove(Item item)
         {
             if (item == null)
             {
@@ -91,28 +88,26 @@ namespace LinkedLists
             if (item == LastItem)
             {
                 Item it = item.PreviousItem;
-                item.PreviousItem = null;
-                it.NextItem = null;
+                item.UnLinkPrev();
                 LastItem = it;
             }
-
             else if (item == FirstItem)
             {
                 Item it = item.NextItem;
-                item.NextItem = null;
-                it.PreviousItem = null;
+                it.UnLinkPrev();
                 FirstItem = it;
             }
-
             else
             {
-                item.NextItem.link(item.PreviousItem);
-                item.NextItem = null;
-                item.PreviousItem = null;
+                Item NIt = item.NextItem;
+                Item PIt = item.PreviousItem;   
+                item.NextItem.UnLinkPrev();
+                item.UnLinkPrev();
+                NIt.Link(PIt);
             }
         }
 
-        public bool contains(Item item)
+        public bool Contains(Item item)
         {
             if (item == null)
             {

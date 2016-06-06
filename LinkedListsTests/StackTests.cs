@@ -15,10 +15,10 @@ namespace LinkedListsTests
         {
             var myStack = new Stack();
 
-            myStack.push(5);
+            myStack.Push(5);
 
             Assert.True(myStack.LastItem.Value == 5);
-            Assert.True(myStack.contains(5));
+            Assert.True(myStack.Contains(5));
         }
 
         [Fact]
@@ -27,16 +27,16 @@ namespace LinkedListsTests
 
             Stack myStack = new Stack();
 
-            myStack.push(5);
-            myStack.push(3);
-            myStack.push(8);
+            myStack.Push(5);
+            myStack.Push(3);
+            myStack.Push(8);
 
             Assert.True(myStack.LastItem.Value == 8);
             Assert.True(myStack.LastItem.LinkedItem.Value == 3);
             Assert.True(myStack.LastItem.LinkedItem.LinkedItem.Value == 5);
-            Assert.True(myStack.contains(5));
-            Assert.True(myStack.contains(3));
-            Assert.True(myStack.contains(8));
+            Assert.True(myStack.Contains(5));
+            Assert.True(myStack.Contains(3));
+            Assert.True(myStack.Contains(8));
         }
 
         [Fact]
@@ -45,11 +45,11 @@ namespace LinkedListsTests
 
             Stack myStack = new Stack();
 
-            myStack.push(5);
-            myStack.push(3);
-            myStack.push(8);
+            myStack.Push(5);
+            myStack.Push(3);
+            myStack.Push(8);
             int value;
-            myStack.pop(out value);
+            myStack.Pop(out value);
 
             Assert.True(myStack.LastItem.Value == 3);
             Assert.True(myStack.LastItem.LinkedItem.Value == 5);
@@ -62,10 +62,10 @@ namespace LinkedListsTests
 
             Stack myStack = new Stack();
 
-            myStack.push(5);
+            myStack.Push(5);
 
             int value;
-            myStack.pop(out value);
+            myStack.Pop(out value);
 
             Assert.True(myStack.LastItem == null);
             Assert.True(value == 5);

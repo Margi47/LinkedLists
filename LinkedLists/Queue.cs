@@ -12,7 +12,7 @@ namespace LinkedLists
         internal OneLinkItem FirstItem;
         internal OneLinkItem LastItem;
 
-        public void enqueue(int value)
+        public void Enqueue(int value)
         {
             OneLinkItem item = new OneLinkItem(value);
 
@@ -28,7 +28,7 @@ namespace LinkedLists
             }
         }
 
-        public bool contains(int value)
+        public bool Contains(int value)
         {
             for (OneLinkItem i = FirstItem; i != null; i = i.LinkedItem)
             {
@@ -38,9 +38,8 @@ namespace LinkedLists
             return false;            
         }
 
-        public bool dequeue(out int value)
+        public bool Dequeue(out int value)
         {
-
             if (FirstItem != null)
             {
                 if (FirstItem == LastItem)
@@ -54,7 +53,7 @@ namespace LinkedLists
                 {
                     var item = FirstItem;
                     FirstItem = FirstItem.LinkedItem;
-                    item.LinkedItem = null;
+                    item.UnLink();
                     value = item.Value;
                     return true;
                 }
@@ -63,6 +62,5 @@ namespace LinkedLists
             value = default(int);
             return false;
         }
-
     }
 }

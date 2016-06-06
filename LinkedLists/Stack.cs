@@ -10,7 +10,7 @@ namespace LinkedLists
     {
         internal OneLinkItem LastItem;
 
-        public void push(int value)
+        public void Push(int value)
         {
             OneLinkItem item = new OneLinkItem(value);
 
@@ -25,7 +25,7 @@ namespace LinkedLists
             }
         }
 
-        public bool contains(int value)
+        public bool Contains(int value)
         {
             for (OneLinkItem i = LastItem; i != null; i = i.LinkedItem)
             {
@@ -36,16 +36,17 @@ namespace LinkedLists
             return false;
         }
         
-        public bool pop (out int value)
+        public bool Pop (out int value)
         {
             if (LastItem != null)
             {
                 var it = LastItem;            
                 LastItem=it.LinkedItem;
-                it.LinkedItem = null;
+                it.UnLink();
                 value = it.Value;
                 return true;
             }
+
             value = default(int);
             return false;
         }

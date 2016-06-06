@@ -16,11 +16,11 @@ namespace LinkedListsTests
             var myList = new LinkedList();
             Item it = new Item(5);
 
-            myList.insert(it);
+            myList.Insert(it);
 
             Assert.True(myList.FirstItem.Value == 5);
             Assert.True(myList.LastItem.Value == 5);
-            Assert.True(myList.contains(it));
+            Assert.True(myList.Contains(it));
         }
 
         [Fact]
@@ -32,9 +32,9 @@ namespace LinkedListsTests
             Item it2 = new Item(3);
             Item it3 = new Item(8);
 
-            myList.insert(it1);
-            myList.insert(it2);
-            myList.insert(it3);
+            myList.Insert(it1);
+            myList.Insert(it2);
+            myList.Insert(it3);
 
             Assert.True(myList.FirstItem.Value == 5);
             Assert.True(myList.LastItem.Value == 8);
@@ -42,9 +42,9 @@ namespace LinkedListsTests
             Assert.True(it2.NextItem.Value == 8);
             Assert.True(it3.PreviousItem.Value == 3);
             Assert.True(it2.PreviousItem.Value == 5);
-            Assert.True(myList.contains(it1));
-            Assert.True(myList.contains(it2));
-            Assert.True(myList.contains(it3));
+            Assert.True(myList.Contains(it1));
+            Assert.True(myList.Contains(it2));
+            Assert.True(myList.Contains(it3));
         }
 
         [Fact]
@@ -56,9 +56,9 @@ namespace LinkedListsTests
             Item it2 = new Item(3);
             Item it3 = new Item(8);
 
-            myList.insert(it1);
-            myList.insert(it3);
-            myList.insertAfter(it1, it2);
+            myList.Insert(it1);
+            myList.Insert(it3);
+            myList.InsertAfter(it1, it2);
 
             Assert.True(myList.FirstItem.Value == 5);
             Assert.True(myList.LastItem.Value == 8);
@@ -66,9 +66,9 @@ namespace LinkedListsTests
             Assert.True(it2.NextItem.Value == 8);
             Assert.True(it3.PreviousItem.Value == 3);
             Assert.True(it2.PreviousItem.Value == 5);
-            Assert.True(myList.contains(it1));
-            Assert.True(myList.contains(it2));
-            Assert.True(myList.contains(it3));
+            Assert.True(myList.Contains(it1));
+            Assert.True(myList.Contains(it2));
+            Assert.True(myList.Contains(it3));
         }
 
         [Fact]
@@ -80,9 +80,9 @@ namespace LinkedListsTests
             Item it2 = new Item(3);
             Item it3 = new Item(8);
 
-            myList.insert(it1);
-            myList.insert(it2);
-            myList.insertAfter(it2, it3);
+            myList.Insert(it1);
+            myList.Insert(it2);
+            myList.InsertAfter(it2, it3);
 
             Assert.True(myList.FirstItem.Value == 5);
             Assert.True(myList.LastItem.Value == 8);
@@ -90,9 +90,9 @@ namespace LinkedListsTests
             Assert.True(it2.NextItem.Value == 8);
             Assert.True(it3.PreviousItem.Value == 3);
             Assert.True(it2.PreviousItem.Value == 5);
-            Assert.True(myList.contains(it1));
-            Assert.True(myList.contains(it2));
-            Assert.True(myList.contains(it3));
+            Assert.True(myList.Contains(it1));
+            Assert.True(myList.Contains(it2));
+            Assert.True(myList.Contains(it3));
         }
 
         [Fact]
@@ -104,9 +104,9 @@ namespace LinkedListsTests
             Item it2 = new Item(3);
             Item it3 = new Item(8);
 
-            myList.insert(it1);
-            myList.insert(it3);
-            myList.insertBefore(it3, it2);
+            myList.Insert(it1);
+            myList.Insert(it3);
+            myList.InsertBefore(it3, it2);
 
             Assert.True(myList.FirstItem.Value == 5);
             Assert.True(myList.LastItem.Value == 8);
@@ -114,9 +114,9 @@ namespace LinkedListsTests
             Assert.True(it2.NextItem.Value == 8);
             Assert.True(it3.PreviousItem.Value == 3);
             Assert.True(it2.PreviousItem.Value == 5);
-            Assert.True(myList.contains(it1));
-            Assert.True(myList.contains(it2));
-            Assert.True(myList.contains(it3));
+            Assert.True(myList.Contains(it1));
+            Assert.True(myList.Contains(it2));
+            Assert.True(myList.Contains(it3));
         }
 
         [Fact]
@@ -128,9 +128,9 @@ namespace LinkedListsTests
             Item it2 = new Item(3);
             Item it3 = new Item(8);
 
-            myList.insert(it2);
-            myList.insert(it3);
-            myList.insertBefore(it2, it1);
+            myList.Insert(it2);
+            myList.Insert(it3);
+            myList.InsertBefore(it2, it1);
 
             Assert.True(myList.FirstItem.Value == 5);
             Assert.True(myList.LastItem.Value == 8);
@@ -138,9 +138,9 @@ namespace LinkedListsTests
             Assert.True(it2.NextItem.Value == 8);
             Assert.True(it3.PreviousItem.Value == 3);
             Assert.True(it2.PreviousItem.Value == 5);
-            Assert.True(myList.contains(it1));
-            Assert.True(myList.contains(it2));
-            Assert.True(myList.contains(it3));
+            Assert.True(myList.Contains(it1));
+            Assert.True(myList.Contains(it2));
+            Assert.True(myList.Contains(it3));
         }
 
         [Fact]
@@ -150,19 +150,19 @@ namespace LinkedListsTests
             Item it1 = new Item(5);
             Item it2 = new Item(3);
             Item it3 = new Item(8);
-            myList.insert(it1);
-            myList.insert(it2);
-            myList.insert(it3);
+            myList.Insert(it1);
+            myList.Insert(it2);
+            myList.Insert(it3);
 
-            myList.remove(it2);
+            myList.Remove(it2);
 
             Assert.True(myList.FirstItem.Value == 5);
             Assert.True(myList.LastItem.Value == 8);
             Assert.True(it1.NextItem.Value == 8);
             Assert.True(it3.PreviousItem.Value == 5);
-            Assert.True(myList.contains(it1));
-            Assert.False(myList.contains(it2));
-            Assert.True(myList.contains(it3));              
+            Assert.True(myList.Contains(it1));
+            Assert.False(myList.Contains(it2));
+            Assert.True(myList.Contains(it3));              
         }
 
         [Fact]
@@ -172,18 +172,18 @@ namespace LinkedListsTests
             Item it1 = new Item(5);
             Item it2 = new Item(3);
             Item it3 = new Item(8);
-            myList.insert(it1);
-            myList.insert(it2);
-            myList.insert(it3);
+            myList.Insert(it1);
+            myList.Insert(it2);
+            myList.Insert(it3);
 
-            myList.remove(it1);
+            myList.Remove(it1);
 
             Assert.True(myList.FirstItem.Value == 3);
             Assert.True(myList.LastItem.Value == 8);
             Assert.True(it2.PreviousItem == null);
-            Assert.True(myList.contains(it2));
-            Assert.False(myList.contains(it1));
-            Assert.True(myList.contains(it3));
+            Assert.True(myList.Contains(it2));
+            Assert.False(myList.Contains(it1));
+            Assert.True(myList.Contains(it3));
         }
 
         [Fact]
@@ -193,18 +193,18 @@ namespace LinkedListsTests
             Item it1 = new Item(5);
             Item it2 = new Item(3);
             Item it3 = new Item(8);
-            myList.insert(it1);
-            myList.insert(it2);
-            myList.insert(it3);
+            myList.Insert(it1);
+            myList.Insert(it2);
+            myList.Insert(it3);
 
-            myList.remove(it3);
+            myList.Remove(it3);
 
             Assert.True(myList.FirstItem.Value == 5);
             Assert.True(myList.LastItem.Value == 3);
             Assert.True(it2.NextItem == null);
-            Assert.True(myList.contains(it2));
-            Assert.True(myList.contains(it1));
-            Assert.False(myList.contains(it3));
+            Assert.True(myList.Contains(it2));
+            Assert.True(myList.Contains(it1));
+            Assert.False(myList.Contains(it3));
         }
     }
 }

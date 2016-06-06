@@ -9,25 +9,31 @@ namespace LinkedLists
     public class Item
     {
         public int Value { get; private set; }
-        public Item PreviousItem { get; set; }
-        public Item NextItem { get; set; }
+        public Item PreviousItem { get; private set; }
+        public Item NextItem { get; private set; }
 
         public Item(int value)
         {
             Value = value;
         }
 
-        public void link(Item previousItem)
+        public void Link(Item previousItem)
         {
-            if (previousItem != null)
+            if (previousItem == null)
             {
-                PreviousItem = previousItem;
-                previousItem.NextItem = this;
+                throw new ArgumentNullException(nameof(previousItem));
             }
-            else
-            {
-                throw new Exception("item");
-            }
+
+            PreviousItem = previousItem;
+            previousItem.NextItem = this;
+        }
+
+        //delete link with previous item
+        public void UnLinkPrev()
+        {
+            Item it=this.PreviousItem;
+            this.PreviousItem = null;
+            it.NextItem = null;
         }
     }
 }

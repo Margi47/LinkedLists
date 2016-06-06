@@ -8,7 +8,7 @@ namespace LinkedLists
 {
     public class OneLinkItem
     {
-        public OneLinkItem LinkedItem { get; set; }
+        public OneLinkItem LinkedItem { get; private set; }
         public int Value { get; private set; }
 
         public OneLinkItem(int value)
@@ -18,8 +18,16 @@ namespace LinkedLists
 
         public void Link(OneLinkItem item)
         {
+            if (item == null)
+            {
+                throw new ArgumentNullException(nameof(item));
+            }
             LinkedItem = item;
         }
 
+        public void UnLink()
+        {
+            LinkedItem = null;
+        }
     }
 }
