@@ -19,7 +19,7 @@ namespace LinkedListsTests
             it2.Link(it1);
 
             Assert.True(it1.NextItem.Value == 8);
-            Assert.True(it2.PreviousItem.Value == 5);            
+            Assert.True(it2.PreviousItem.Value == 5);
         }
 
         [Fact]
@@ -45,6 +45,16 @@ namespace LinkedListsTests
 
             Assert.True(it1.NextItem == null);
             Assert.True(it2.PreviousItem == null);
+      
+        }
+
+        [Fact]
+        public void catch_exception()
+        {
+            Item it1 = new Item(5);
+            Item it2=null;
+
+            Assert.Throws<ArgumentNullException>(() => it1.Link(it2));
         }
     }
 }

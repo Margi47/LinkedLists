@@ -10,11 +10,11 @@ namespace LinkedListsTests
 {
     public class QueueTests
     {
+        Queue myQueue = new Queue();
+
         [Fact]
         public void add_item_should_work_correctly()
         {
-            var myQueue = new Queue();
-
             myQueue.Enqueue(5);
 
             Assert.True(myQueue.FirstItem.Value == 5);
@@ -25,9 +25,6 @@ namespace LinkedListsTests
         [Fact]
         public void add_item_should_create_a_link()
         {
-
-            Queue myQueue = new Queue();
-
             myQueue.Enqueue(5);
             myQueue.Enqueue(3);
             myQueue.Enqueue(8);
@@ -44,9 +41,6 @@ namespace LinkedListsTests
         [Fact]
         public void dequeue_should_delete_item()
         {
-
-            Queue myQueue = new Queue();
-
             myQueue.Enqueue(5);
             myQueue.Enqueue(3);
             myQueue.Enqueue(8);
@@ -62,9 +56,6 @@ namespace LinkedListsTests
         [Fact]
         public void dequeue_should_delete_the_only_item()
         {
-
-            Queue myQueue = new Queue();
-
             myQueue.Enqueue(5);
 
             int value;

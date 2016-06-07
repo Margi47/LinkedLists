@@ -10,11 +10,11 @@ namespace LinkedListsTests
 {
     public class StackTests
     {
+        Stack myStack = new Stack();
+
         [Fact]
         public void add_item_should_work_correctly()
         {
-            var myStack = new Stack();
-
             myStack.Push(5);
 
             Assert.True(myStack.LastItem.Value == 5);
@@ -24,9 +24,6 @@ namespace LinkedListsTests
         [Fact]
         public void add_item_should_create_a_link()
         {
-
-            Stack myStack = new Stack();
-
             myStack.Push(5);
             myStack.Push(3);
             myStack.Push(8);
@@ -42,9 +39,6 @@ namespace LinkedListsTests
         [Fact]
         public void pop_should_delete_item()
         {
-
-            Stack myStack = new Stack();
-
             myStack.Push(5);
             myStack.Push(3);
             myStack.Push(8);
@@ -59,9 +53,6 @@ namespace LinkedListsTests
         [Fact]
         public void pop_should_delete_the_only_item()
         {
-
-            Stack myStack = new Stack();
-
             myStack.Push(5);
 
             int value;
